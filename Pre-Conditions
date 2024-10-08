@@ -1,0 +1,71 @@
+ForestX.java Several test environments that you can use to check and demonstrate particular functionalities of the agent.
+
+Forest.mas2j The JASON main file that will instruct JASON to use the correct environment and to establish the correct agents
+
+hero.asl The AgentSpeak file which contains the Hero agent
+
+goblin.asl The AgentSpeak file which contains the Goblin agent
+
+Task 1 Your task is to write the Hero agent, within the hero.asl. The agent task is described below, followed by details of the environment given, with actions and percepts available to you.You are not to make changes to the forest.mas2j file, nor to the goblin.asl file. Your agent should be presented only in hero.asl, as that is the only file which will be assessed.
+
+Task 2 Create a short video (of no more than 7 minutes) that demonstrates your agent working. In this video you should also explain how your agent works, and be sure to point out and explain various parts of your code. It may be helpful to also refer to specifics about the environment. You should consider carefully how your environment is configured (ie: where are objects placed?). You can use the provided testcase environments to demonstrate the functionality of the agent. You are required to record your voice and the screen of your computer, though you may also include your face from a webcam if you wish.
+
+Required Functionality of Hero Agent
+
+The hero agent is to move through the environment in a systematic way. It should collect a vase, coin, and gem. Upon finding these three items, it should then move to where the goblin is, and then drop the items in that position. If it does not find all three times, Then it should not visit the goblin. A rule has been placed in hero.asl for you. This rule is at(P). This rule will state whether it is true that the Hero agent is in the same position as the agent named in the parameter P. For example, if there is an agent named philby within the system, then adding the achievement goal !at(philby) will instruct the hero agent to achieve the state of affairs where it is at the same position in the grid as the agent philby. If you wish to use this rule, you must of course define a plan which is applicable.Your code within the hero.asl file should contain your name and student ID at the top, and it should be well commented - it is very important to convey your understanding through these comments.
+
+The Goblin Agent
+
+The goblin agent (given for you in goblin.asl) is waiting in his given position (this is defined by the environment), and he will stash an item that is dropped in his location, should it be a coin, gem, or vase.
+
+The Forest Environment
+
+The forest environment consists of a 8x8 grid, each square representing the location within the forest. Within several squares of the forest there will be items that the Hero Agent can choose to pickup, if so desired.There may be a teleporter present (this is a square labelled as T) in the environment which teleports the hero to a random spot in the forest.The environment has several percepts and actions that can be utilised by the agent. These are:
+
+Percepts
+
+pos(hero, x, y)The hero agent is at the position (x,y)
+
+pos(goblin, x, y)The goblin agent is at the position (x,y)
+
+gem(hero)The hero is at a position that contains a gem
+
+coin(hero)The hero is at a position that contains a coin
+
+vase(hero)The hero is at a position that contains a vase
+
+gem(goblin)The goblin is at a position that contains a gem
+
+coin(goblin)The goblin is at a position that contains a coin
+
+vase(goblin)The goblin is at a position that contains a vase
+
+hero(coin)The hero is currently holding a coin
+
+hero(vase)The hero is currently holding a vase
+
+hero(gem)The hero is currently holding a gem
+
+Actions
+
+next(slot)The hero will advance its position to the next one in the forest. This is on a left-to-right, top-to-bottom sequence.
+
+move towards(x,y)The hero will move towards the location stated.
+
+pick(coin)Hero will pick up the coin object in the current position, if there is one.
+
+drop(coin)Hero will drop the coin object, should they have one, in the current position. The hero will then advance to the next position.
+
+stash(coin)The Goblin will pick up the coin object that is in his current position and stash it. There is no percept to signal that the goblin has stashed an item.
+
+pick(gem)Hero will pick up the gem object in the current position, if there is one.
+
+drop(gem)Hero will drop the gem object, should they have one, in the current position. The hero will then advance to the next position.
+
+stash(gem)The Goblin will pick up the gem object that is in his current position and stash it. There is no percept to signal that the goblin has stashed an item.
+
+pick(vase)Hero will pick up the vase object in the current position, if there is one.
+
+drop(vase)Hero will drop the vase object, should they have one, in the current position. The hero will then advance to the next position.
+
+stash(vase)The Goblin will pick up the vase object that is in his current position and stash it. There is no percept to signal that the goblin has stashed an item.
