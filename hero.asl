@@ -1,6 +1,3 @@
-//STUDENT NAME: Benedikt Geitz
-//STUDENT ID: 200051442
-
 /*Beliefs & rules*/
 //Hero is at the position of agent P (variable),
 //if agent P's position is identical to Hero's position.
